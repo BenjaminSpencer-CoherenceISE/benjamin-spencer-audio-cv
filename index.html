@@ -31,7 +31,13 @@
 
 .tech-section{
 position:relative;
-z-index:1;
+overflow:hidden;
+isolation:isolate;
+}
+
+.tech-section > *{
+position:relative;
+z-index:2;
 }
 
 /* moving image layer */
@@ -79,7 +85,7 @@ transparent 30%,
 rgba(10,10,10,.55)
 );
 
-z-index:-1;
+z-index:1;
 pointer-events:none;
 }
 
