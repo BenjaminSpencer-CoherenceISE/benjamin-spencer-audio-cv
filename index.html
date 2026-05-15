@@ -35,15 +35,15 @@ overflow:hidden;
 isolation:isolate;
 }
 
-    .tech-section::before,
+   .tech-section::before,
 .tech-section::after{
 pointer-events:none;
+z-index:0;
 }
 .tech-section > *{
 position:relative;
-z-index:2;
+z-index:1;
 }
-
 /* moving image layer */
 
 .tech-section::before{
@@ -1074,7 +1074,7 @@ document.body.style.overflow = 'auto';
 
 </script>
 
-    
+    <section class="section-divider pt-32 mt-20">
     <a href="commercial-terms.html"
 class="card p-10 group transition duration-500 hover:-translate-y-2">
 
