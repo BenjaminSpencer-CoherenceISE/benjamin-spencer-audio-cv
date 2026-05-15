@@ -35,6 +35,10 @@ overflow:hidden;
 isolation:isolate;
 }
 
+    .tech-section::before,
+.tech-section::after{
+pointer-events:none;
+}
 .tech-section > *{
 position:relative;
 z-index:2;
@@ -66,7 +70,7 @@ animation:slowPan 35s linear infinite;
 
 opacity:.55;
 
-z-index:0;
+z-index:-2;
 }
 
 
@@ -85,7 +89,7 @@ transparent 30%,
 rgba(10,10,10,.55)
 );
 
-z-index:1;
+z-index:-1;
 pointer-events:none;
 }
 
