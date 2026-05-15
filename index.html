@@ -34,16 +34,14 @@ position:relative;
 overflow:hidden;
 isolation:isolate;
 border-radius:32px;
+contain:paint;
 }
    .tech-section::before,
 .tech-section::after{
 pointer-events:none;
 z-index:0;
 }
-.tech-section > *{
-position:relative;
-z-index:1;
-}
+
 /* moving image layer */
 
 .tech-section::before{
@@ -711,6 +709,8 @@ VIEW PROJECT →
 
 <section class="max-w-7xl mx-auto px-10 py-20 section-divider tech-section">
 
+<div class="content-layer">
+
 <div class="mb-14">
 
 <p class="uppercase tracking-[0.35em] text-neutral-500 text-xs mb-3">
@@ -951,7 +951,7 @@ Audio for Meetings & Conferences
 </div>
 
 </div>
-
+</div>
 </section>
 <div class="mt-6">
 
