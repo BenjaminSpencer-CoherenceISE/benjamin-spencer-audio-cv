@@ -96,7 +96,19 @@ transform:scale(1.1) translateX(-3%);
 <div class="min-h-screen">
 
   <!-- HERO -->
-  <section class="max-w-7xl mx-auto px-10 pt-20 pb-28">
+ <section class="relative overflow-hidden">
+
+<div class="absolute inset-0 opacity-[0.14] pointer-events-none">
+  <img
+    src="images/hero-bg.jpg"
+    class="w-full h-full object-cover"
+    alt=""
+  />
+</div>
+
+<div class="absolute inset-0 bg-black/72"></div>
+
+<div class="relative max-w-7xl mx-auto px-10 pt-20 pb-28">
 
    <div class="grid lg:grid-cols-[1.45fr_0.8fr] gap-20 items-start">
 
@@ -233,7 +245,7 @@ linkedin.com/in/benjamin-spencer-32953421
         </div>
 
     </div>
-
+</div>
 </section>
 
   <!-- EXPERIENCE -->
