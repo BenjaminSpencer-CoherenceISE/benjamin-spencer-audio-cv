@@ -1054,25 +1054,21 @@ Health, safety and environmental induction programmes supporting compliance acro
 </div>
 
 </div>
-<!-- CERTIFICATE MODAL -->
+<!-- CERTIFICATE IMAGE MODAL -->
 
 <div id="certModal"
-class="fixed inset-0 bg-black/90 backdrop-blur-sm z-[999] hidden items-center justify-center p-10">
+class="fixed inset-0 bg-black/95 backdrop-blur-sm z-[999] hidden items-center justify-center p-4">
 
 <button onclick="closeCert()"
-class="absolute top-8 right-8 text-neutral-400 hover:text-white text-4xl transition">
+class="absolute top-5 right-5 text-neutral-400 hover:text-white text-5xl leading-none z-10">
 ×
 </button>
 
-<div class="w-full max-w-5xl h-[90vh] rounded-2xl overflow-hidden border border-neutral-800 shadow-2xl">
-
-<iframe
-id="certFrame"
+<img
+id="certImage"
 src=""
-class="w-full h-full bg-neutral-950">
-</iframe>
-
-</div>
+class="max-w-full max-h-full object-contain rounded-xl shadow-2xl border border-neutral-800"
+/>
 
 </div>
 
@@ -1081,14 +1077,18 @@ class="w-full h-full bg-neutral-950">
 function openCert(file){
 document.getElementById('certModal').classList.remove('hidden');
 document.getElementById('certModal').classList.add('flex');
-document.getElementById('certFrame').src = file;
+
+document.getElementById('certImage').src = file;
+
 document.body.style.overflow = 'hidden';
 }
 
 function closeCert(){
 document.getElementById('certModal').classList.add('hidden');
 document.getElementById('certModal').classList.remove('flex');
-document.getElementById('certFrame').src = '';
+
+document.getElementById('certImage').src = '';
+
 document.body.style.overflow = 'auto';
 }
 
