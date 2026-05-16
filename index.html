@@ -1303,5 +1303,21 @@ class="card p-10 block group transition duration-500 hover:-translate-y-2">
 </a>
 </section>
 </div>
+  <script>
+window.addEventListener('beforeunload', () => {
+sessionStorage.setItem('scrollPosition', window.scrollY);
+});
+
+window.addEventListener('load', () => {
+const savedPosition = sessionStorage.getItem('scrollPosition');
+
+if(savedPosition !== null){
+window.scrollTo({
+top: parseInt(savedPosition),
+behavior: 'instant'
+});
+}
+});
+</script>
 </body>
 </html>
