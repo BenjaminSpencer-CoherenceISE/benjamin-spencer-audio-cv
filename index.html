@@ -1304,18 +1304,19 @@ class="card p-10 block group transition duration-500 hover:-translate-y-2">
 </section>
 </div>
   <script>
+history.scrollRestoration = "manual";
+
 window.addEventListener('beforeunload', () => {
 sessionStorage.setItem('scrollPosition', window.scrollY);
 });
 
-window.addEventListener('load', () => {
+window.addEventListener('pageshow', () => {
 const savedPosition = sessionStorage.getItem('scrollPosition');
 
-if(savedPosition !== null){
-window.scrollTo({
-top: parseInt(savedPosition),
-behavior: 'instant'
-});
+if (savedPosition !== null) {
+setTimeout(() => {
+window.scrollTo(0, parseInt(savedPosition));
+}, 50);
 }
 });
 </script>
