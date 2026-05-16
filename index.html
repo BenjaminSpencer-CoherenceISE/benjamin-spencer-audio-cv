@@ -1306,17 +1306,19 @@ class="card p-10 block group transition duration-500 hover:-translate-y-2">
   <script>
 history.scrollRestoration = "manual";
 
-window.addEventListener('beforeunload', () => {
-sessionStorage.setItem('scrollPosition', window.scrollY);
-});
+function saveScrollPosition() {
+sessionStorage.setItem("scrollPosition", window.scrollY);
+}
 
-window.addEventListener('pageshow', () => {
-const savedPosition = sessionStorage.getItem('scrollPosition');
+window.addEventListener("scroll", saveScrollPosition);
+
+window.addEventListener("pageshow", () => {
+const savedPosition = sessionStorage.getItem("scrollPosition");
 
 if (savedPosition !== null) {
 setTimeout(() => {
 window.scrollTo(0, parseInt(savedPosition));
-}, 50);
+}, 100);
 }
 });
 </script>
