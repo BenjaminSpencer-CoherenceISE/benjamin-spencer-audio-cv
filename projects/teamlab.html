@@ -10,6 +10,8 @@
 
 <script src="https://cdn.tailwindcss.com"></script>
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap" rel="stylesheet">
@@ -58,35 +60,47 @@ Delivered full integration and commissioning of immersive AV, lighting, multimed
 
 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
 
-<div class="overflow-hidden rounded-3xl border border-neutral-800 group cursor-pointer">
-<img src="../images/teamlab1.jpg"
-class="w-full h-[260px] object-cover transition duration-700 ease-out group-hover:scale-110">
-</div>
+<a href="../images/teamlab1.jpg" class="glightbox" data-gallery="teamlab">
+    <div class="overflow-hidden rounded-3xl border border-neutral-800 group cursor-pointer">
+        <img src="../images/teamlab1.jpg"
+        class="w-full h-[260px] object-cover transition duration-700 ease-out group-hover:scale-110">
+    </div>
+</a>
 
-<div class="overflow-hidden rounded-3xl border border-neutral-800 group cursor-pointer">
-<img src="../images/teamlab2.jpg"
-class="w-full h-[260px] object-cover transition duration-700 ease-out group-hover:scale-110">
-</div>
+<a href="../images/teamlab2.jpg" class="glightbox" data-gallery="teamlab">
+    <div class="overflow-hidden rounded-3xl border border-neutral-800 group cursor-pointer">
+        <img src="../images/teamlab2.jpg"
+        class="w-full h-[260px] object-cover transition duration-700 ease-out group-hover:scale-110">
+    </div>
+</a>
 
-<div class="overflow-hidden rounded-3xl border border-neutral-800 group cursor-pointer">
-<img src="../images/teamlab3.jpg"
-class="w-full h-[260px] object-cover transition duration-700 ease-out group-hover:scale-110">
-</div>
+<a href="../images/teamlab3.jpg" class="glightbox" data-gallery="teamlab">
+    <div class="overflow-hidden rounded-3xl border border-neutral-800 group cursor-pointer">
+        <img src="../images/teamlab3.jpg"
+        class="w-full h-[260px] object-cover transition duration-700 ease-out group-hover:scale-110">
+    </div>
+</a>
 
-<div class="overflow-hidden rounded-3xl border border-neutral-800 group cursor-pointer">
-<img src="../images/teamlab4.jpg"
-class="w-full h-[260px] object-cover transition duration-700 ease-out group-hover:scale-110">
-</div>
+<a href="../images/teamlab4.jpg" class="glightbox" data-gallery="teamlab">
+    <div class="overflow-hidden rounded-3xl border border-neutral-800 group cursor-pointer">
+        <img src="../images/teamlab4.jpg"
+        class="w-full h-[260px] object-cover transition duration-700 ease-out group-hover:scale-110">
+    </div>
+</a>
 
-<div class="overflow-hidden rounded-3xl border border-neutral-800 group cursor-pointer">
-<img src="../images/teamlab5.jpg"
-class="w-full h-[260px] object-cover transition duration-700 ease-out group-hover:scale-110">
-</div>
+<a href="../images/teamlab5.jpg" class="glightbox" data-gallery="teamlab">
+    <div class="overflow-hidden rounded-3xl border border-neutral-800 group cursor-pointer">
+        <img src="../images/teamlab5.jpg"
+        class="w-full h-[260px] object-cover transition duration-700 ease-out group-hover:scale-110">
+    </div>
+</a>
 
-<div class="overflow-hidden rounded-3xl border border-neutral-800 group cursor-pointer">
-<img src="../images/teamlab6.jpg"
-class="w-full h-[260px] object-cover transition duration-700 ease-out group-hover:scale-110">
-</div>
+<a href="../images/teamlab6.jpg" class="glightbox" data-gallery="teamlab">
+    <div class="overflow-hidden rounded-3xl border border-neutral-800 group cursor-pointer">
+        <img src="../images/teamlab6.jpg"
+        class="w-full h-[260px] object-cover transition duration-700 ease-out group-hover:scale-110">
+    </div>
+</a>
 
 
 <div class="col-span-full mt-16">
@@ -129,5 +143,13 @@ class="uppercase tracking-[0.25em] text-sm text-neutral-500 hover:text-amber-400
 
 </div>
 </div>
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
+<script>
+const lightbox = GLightbox({
+    touchNavigation: true,
+    loop: true
+});
+</script>
 </body>
 </html>
