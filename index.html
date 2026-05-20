@@ -31,21 +31,17 @@ overflow: hidden;
     .section-divider {
       border-top: 1px solid #262626;
     }
-.audio-bg{
-opacity:0;
-transform:scale(1.18);
-filter: blur(4px) brightness(0.55);
-
-transition:
-opacity 1.8s ease,
-transform 2.2s ease,
-filter 2.2s ease;
+.audio-bg {
+  opacity: 0;
+  transform: scale(1.08);
+  transition:
+    opacity 1.2s ease,
+    transform 2s ease;
 }
 
-.audio-bg-visible{
-opacity:0.8;
-transform:scale(1.03);
-filter:blur(0px) brightness(0.55);
+.audio-bg.revealed {
+  opacity: 1;
+  transform: scale(1);
 }
 
 /* Technical Platforms background */
@@ -1408,25 +1404,32 @@ window.scrollTo(0, parseInt(savedPosition));
 </footer>
     </div>
 <script>
-const audioSection = document.querySelector('.audio-section');
-const audioBg = document.querySelector('.audio-bg');
+document.addEventListener("DOMContentLoaded", () => {
 
-function revealAudioBg() {
+  const audioSection = document.querySelector(".audio-section");
+  const audioBg = document.querySelector(".audio-bg");
 
-const rect = audioSection.getBoundingClientRect();
-const triggerPoint = window.innerHeight * 0.85;
+  if (!audioSection || !audioBg) return;
 
-if(rect.top < triggerPoint){
-audioBg.classList.add('audio-bg-visible');
-}
+  const observer = new IntersectionObserver((entries) => {
 
-}
+    entries.forEach(entry => {
 
-window.addEventListener('scroll', revealAudioBg);
-window.addEventListener('load', revealAudioBg);
-window.addEventListener('resize', revealAudioBg);
+      if (entry.isIntersecting) {
+        audioBg.classList.add("revealed");
+      } else {
+        audioBg.classList.remove("revealed");
+      }
 
-setTimeout(revealAudioBg, 300);
+    });
+
+  }, {
+    threshold: 0.25
+  });
+
+  observer.observe(audioSection);
+
+});
 </script>
 </body>
 </html>
