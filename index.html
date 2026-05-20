@@ -1395,29 +1395,26 @@ window.scrollTo(0, parseInt(savedPosition));
 
 </footer>
     </div>
- <script>
+<script>
 const audioSection = document.querySelector('.audio-section');
 const audioBg = document.querySelector('.audio-bg');
 
-const observer = new IntersectionObserver((entries) => {
+function revealAudioBg() {
 
-entries.forEach(entry => {
+const rect = audioSection.getBoundingClientRect();
+const triggerPoint = window.innerHeight * 0.85;
 
-if(entry.isIntersecting){
-
+if(rect.top < triggerPoint){
 audioBg.classList.add('audio-bg-visible');
+}
 
 }
 
-});
+window.addEventListener('scroll', revealAudioBg);
+window.addEventListener('load', revealAudioBg);
+window.addEventListener('resize', revealAudioBg);
 
-}, {
-
-threshold: 0.25
-
-});
-
-observer.observe(audioSection);
+setTimeout(revealAudioBg, 300);
 </script>
 </body>
 </html>
