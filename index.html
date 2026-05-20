@@ -1571,5 +1571,60 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 </script>
+  <script>
+
+/* =========================================
+   CINEMATIC MOTION SYSTEM
+   DELETE THIS ENTIRE SCRIPT TO REVERT
+========================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* REVEALS */
+
+  const reveals = document.querySelectorAll(
+    ".reveal, .reveal-slow, .reveal-text"
+  );
+
+  const revealObserver = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");
+      } else {
+        entry.target.classList.remove("active");
+      }
+
+    });
+
+  }, {
+    threshold: 0.15
+  });
+
+  reveals.forEach(el => revealObserver.observe(el));
+
+  /* PARALLAX */
+
+  const parallaxItems = document.querySelectorAll(".parallax");
+
+  window.addEventListener("scroll", () => {
+
+    const scrollY = window.scrollY;
+
+    parallaxItems.forEach(el => {
+
+      const speed = el.dataset.speed || 0.15;
+
+      el.style.transform =
+        `translateY(${scrollY * speed}px)`;
+
+    });
+
+  });
+
+});
+
+</script>
 </body>
 </html>
