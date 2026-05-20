@@ -29,14 +29,19 @@ overflow: hidden;
     .section-divider {
       border-top: 1px solid #262626;
     }
- .audio-bg{
+.audio-bg{
 opacity:0;
 transform:scale(1.18);
 filter:blur(10px) brightness(0.25);
+
+transition:
+opacity 1.8s ease,
+transform 2.2s ease,
+filter 2.2s ease;
 }
 
 .audio-bg-visible{
-opacity:0.55;
+opacity:0.45;
 transform:scale(1.03);
 filter:blur(0px) brightness(0.55);
 }
@@ -704,7 +709,7 @@ VIEW PROJECT →
  <section class="audio-section relative overflow-hidden">
 <!-- Audio Background -->
 <img src="images/fader.jpeg"
-     class="audio-bg absolute inset-0 w-full h-full object-cover opacity-0 scale-110 transition-all duration-[1800ms] ease-out pointer-events-none">
+     class="audio-bg absolute inset-0 w-full h-full object-cover pointer-events-none">
 
 <!-- Dark Overlay -->
 <div class="absolute inset-0 bg-black/60"></div>
