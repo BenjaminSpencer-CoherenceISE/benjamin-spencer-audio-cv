@@ -29,7 +29,11 @@ overflow: hidden;
     .section-divider {
       border-top: 1px solid #262626;
     }
-   
+   .audio-bg-visible{
+    opacity:0.18;
+    transform:scale(1.02);
+    filter:blur(1px) brightness(0.45);
+}
 
 /* Technical Platforms background */
 
@@ -691,8 +695,16 @@ VIEW PROJECT →
 </section>
 
   <!-- LIVE SOUND EXPERIENCE -->
-  <section class="max-w-7xl mx-auto px-10 py-20 section-divider">
+  <section class="relative overflow-hidden">
+<!-- Audio Background -->
+<img src="images/fader.jpeg"
+     class="audio-bg absolute inset-0 w-full h-full object-cover opacity-0 scale-110 transition-all duration-[1800ms] ease-out pointer-events-none">
 
+<!-- Dark Overlay -->
+<div class="absolute inset-0 bg-black/85"></div>
+
+<!-- Content Wrapper -->
+<div class="relative z-10 max-w-7xl mx-auto px-10 py-20 section-divider">
     <div class="mb-14">
       <p class="uppercase tracking-[0.35em] text-neutral-500 text-xs mb-3">
         Live Sound & Touring Experience
@@ -901,7 +913,7 @@ VIEW PROJECT →
 </div>
 
     </div>
-
+</div>
  </section>
 <!-- TECHNICAL CERTIFICATIONS & INDUSTRY TRAINING -->
 
@@ -1369,5 +1381,18 @@ window.scrollTo(0, parseInt(savedPosition));
 
 </footer>
     </div>
+  <script>
+const audioSection = document.querySelector('.audio-bg');
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add('audio-bg-visible');
+        }
+    });
+}, { threshold: 0.35 });
+
+observer.observe(audioSection);
+</script>
 </body>
 </html>
