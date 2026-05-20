@@ -107,7 +107,152 @@ transform:scale(1.1) translateX(-3%);
 }
 
 }
+/* =========================================
+   CINEMATIC MOTION SYSTEM
+   DELETE THIS ENTIRE BLOCK TO REVERT
+========================================= */
 
+:root {
+  --cinematic-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* GLOBAL SMOOTHNESS */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* REVEAL ANIMATIONS */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 1s var(--cinematic-ease),
+    transform 1s var(--cinematic-ease);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* SLOW CINEMATIC REVEAL */
+
+.reveal-slow {
+  opacity: 0;
+  transform: translateY(60px);
+  transition:
+    opacity 1.6s var(--cinematic-ease),
+    transform 1.6s var(--cinematic-ease);
+}
+
+.reveal-slow.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* STAGGERED TEXT */
+
+.reveal-text {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.8s var(--cinematic-ease),
+    transform 0.8s var(--cinematic-ease);
+}
+
+.reveal-text.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* IMAGE PARALLAX */
+
+.parallax {
+  transform: translateY(0px);
+  transition: transform 0.15s linear;
+  will-change: transform;
+}
+
+/* PREMIUM HOVER */
+
+.luxury-hover {
+  transition:
+    transform 0.7s var(--cinematic-ease),
+    box-shadow 0.7s var(--cinematic-ease),
+    filter 0.7s var(--cinematic-ease);
+}
+
+.luxury-hover:hover {
+  transform: translateY(-6px);
+  filter: brightness(1.05);
+}
+
+/* DIM NON-HOVERED GALLERY ITEMS */
+
+.gallery-grid:hover .gallery-item {
+  opacity: 0.45;
+}
+
+.gallery-grid .gallery-item:hover {
+  opacity: 1;
+  transform: scale(1.03);
+}
+
+.gallery-item {
+  transition:
+    opacity 0.6s ease,
+    transform 0.8s var(--cinematic-ease);
+}
+
+/* FILM GRAIN */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.025;
+  mix-blend-mode: soft-light;
+  background-image:
+    url("https://grainy-gradients.vercel.app/noise.svg");
+}
+
+/* AUDIO SECTION ATMOSPHERE */
+
+.audio-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at center,
+    transparent 30%,
+    rgba(0,0,0,0.55) 100%);
+  pointer-events: none;
+}
+
+/* DIVIDER GLOW */
+
+.section-divider {
+  position: relative;
+}
+
+.section-divider::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -1px;
+  transform: translateX(-50%);
+  width: 40%;
+  height: 1px;
+  background:
+    linear-gradient(to right,
+    transparent,
+    rgba(255,255,255,0.25),
+    transparent);
+}
 </style>
 </head>
 
