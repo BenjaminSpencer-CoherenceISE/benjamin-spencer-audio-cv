@@ -701,7 +701,7 @@ VIEW PROJECT →
 </section>
 
   <!-- LIVE SOUND EXPERIENCE -->
-  <section class="relative overflow-hidden">
+ <section class="audio-section relative overflow-hidden">
 <!-- Audio Background -->
 <img src="images/fader.jpeg"
      class="audio-bg absolute inset-0 w-full h-full object-cover opacity-0 scale-110 transition-all duration-[1800ms] ease-out pointer-events-none">
@@ -1386,16 +1386,27 @@ window.scrollTo(0, parseInt(savedPosition));
 
 </footer>
     </div>
-  <script>
-const audioSection = document.querySelector('.audio-bg');
+ <script>
+const audioSection = document.querySelector('.audio-section');
+const audioBg = document.querySelector('.audio-bg');
 
 const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if(entry.isIntersecting){
-            entry.target.classList.add('audio-bg-visible');
-        }
-    });
-}, { threshold: 0.35 });
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+
+audioBg.classList.add('audio-bg-visible');
+
+}
+
+});
+
+}, {
+
+threshold: 0.25
+
+});
 
 observer.observe(audioSection);
 </script>
