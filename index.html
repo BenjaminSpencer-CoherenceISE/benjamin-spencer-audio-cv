@@ -52,16 +52,35 @@ transform:translateX(0);
 }
 .audio-bg{
 opacity:0;
-transform:scale(1.12);
+transform:scale(1.18);
 transition:
-opacity 1.8s ease,
-transform 7s ease;
+opacity 2s ease,
+transform 8s cubic-bezier(0.22,1,0.36,1);
 will-change:transform, opacity;
 }
 
 .audio-bg.revealed{
 opacity:.72;
 transform:scale(1);
+}
+    .desktop-bg{
+display:block;
+}
+
+.mobile-bg{
+display:none;
+}
+
+@media (max-width: 767px){
+
+.desktop-bg{
+display:none;
+}
+
+.mobile-bg{
+display:block;
+}
+
 }
 /* Technical Platforms background */
 
@@ -870,14 +889,14 @@ VIEW PROJECT →
 <!-- Desktop -->
 <img
   src="images/fader.jpeg"
- class="audio-bg absolute inset-0 w-full h-full object-cover object-center pointer-events-none hidden md:block"
+  class="audio-bg desktop-bg absolute inset-0 w-full h-full object-cover object-center pointer-events-none"
   alt=""
 >
 
 <!-- Mobile -->
 <img
   src="images/fader-mobile.jpeg"
-  class="audio-bg absolute inset-0 w-full h-full object-cover object-center opacity-55 pointer-events-none block md:hidden"
+  class="audio-bg mobile-bg absolute inset-0 w-full h-full object-cover object-center pointer-events-none"
   alt=""
 >
 <div class="absolute inset-0 bg-black/45"></div>
