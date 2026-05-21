@@ -1612,7 +1612,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   reveals.forEach(el => revealObserver.observe(el));
 document.querySelectorAll('.reveal-left, .reveal-right').forEach(el => {
-observer.observe(el);
+  revealObserver.observe(el);
 });
   /* PARALLAX */
 
