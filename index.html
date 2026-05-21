@@ -60,12 +60,17 @@ transform:translateX(0);
   opacity: 1;
   transform: scale(1);
 }
-.audio-bg {
-  filter: blur(10px);
+.audio-bg{
+opacity:0;
+transform:scale(1.04);
+transition:
+opacity 1.2s ease,
+transform 2s ease;
 }
 
-.audio-bg.revealed {
-  filter: blur(0px);
+.audio-bg.revealed{
+opacity:.75;
+transform:scale(1);
 }
 /* Technical Platforms background */
 
@@ -870,20 +875,19 @@ VIEW PROJECT →
   <!-- LIVE SOUND EXPERIENCE -->
  <section class="audio-section relative overflow-hidden">
 <!-- Audio Background -->
-<img
-  src="images/fader.jpeg"
-  class="audio-bg absolute top-0 left-0 w-full h-[420px] object-cover object-center opacity-25 pointer-events-none md:h-full"
-  alt=""
->
+<div class="absolute inset-0 overflow-hidden">
+
 <img
   src="images/fader-mobile.jpeg"
-  class="absolute top-0 left-0 w-full h-[55vh] object-cover object-center opacity-35 pointer-events-none block md:hidden"
+  class="audio-bg absolute inset-0 w-full h-full object-cover object-center md:object-[center_35%] opacity-55 pointer-events-none"
   alt=""
 >
-<!-- Dark Overlay -->
-<div class="absolute inset-0 bg-black/30"></div>
 
-<div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_35%,rgba(0,0,0,0.55)_100%)]"></div>
+<div class="absolute inset-0 bg-black/45"></div>
+
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,rgba(0,0,0,0.72)_100%)]"></div>
+
+</div>
 <!-- Content Wrapper -->
 <div class="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 py-20 section-divider">
     <div class="mb-14">
