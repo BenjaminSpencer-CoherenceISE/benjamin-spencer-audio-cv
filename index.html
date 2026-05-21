@@ -28,7 +28,23 @@ border-radius: 24px;
 position: relative;
 overflow: hidden;
 }
+.reveal-left{
+opacity:0;
+transform:translateX(-80px);
+transition:all 1.2s cubic-bezier(0.22,1,0.36,1);
+}
 
+.reveal-right{
+opacity:0;
+transform:translateX(80px);
+transition:all 1.2s cubic-bezier(0.22,1,0.36,1);
+}
+
+.reveal-left.active,
+.reveal-right.active{
+opacity:1;
+transform:translateX(0);
+}
     .section-divider {
       border-top: 1px solid #262626;
     }
@@ -640,7 +656,7 @@ Global Touring, Concerts & Live Events
 
 <div class="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto items-start">
 
-  <div class="card luxury-hover reveal p-8 min-h-[360px] transition-all duration-700 hover:-translate-y-2 hover:border-amber-400/40 hover:shadow-[0_0_70px_rgba(255,190,0,0.12)]">
+ <div class="card luxury-hover reveal-left p-8 min-h-[360px] transition-all duration-700 hover:-translate-y-2 hover:border-amber-400/40 hover:shadow-[0_0_70px_rgba(255,190,0,0.12)]">
         <h3 class="text-2xl font-semibold mb-6">Digital Console Platforms</h3>
 
      <div class="text-neutral-300 leading-relaxed">
@@ -653,7 +669,7 @@ Global Touring, Concerts & Live Events
           </div>
       </div>
 
-    <div class="card luxury-hover reveal p-8 min-h-[360px] transition-all duration-700 hover:-translate-y-2 hover:border-amber-400/40 hover:shadow-[0_0_70px_rgba(255,190,0,0.12)]">
+   <div class="card luxury-hover reveal-right p-8 min-h-[360px] transition-all duration-700 hover:-translate-y-2 hover:border-amber-400/40 hover:shadow-[0_0_70px_rgba(255,190,0,0.12)]">
         <h3 class="text-2xl font-semibold mb-6">Loudspeaker & Systems Platforms</h3>
 
        <div class="space-y-5">
@@ -666,7 +682,7 @@ Global Touring, Concerts & Live Events
         </div>
       </div>
 
-     <div class="card luxury-hover reveal p-8 min-h-[360px] transition-all duration-700 hover:-translate-y-2 hover:border-amber-400/40 hover:shadow-[0_0_70px_rgba(255,190,0,0.12)]">
+     <div class="card luxury-hover reveal-left p-8 min-h-[360px] transition-all duration-700 hover:-translate-y-2 hover:border-amber-400/40 hover:shadow-[0_0_70px_rgba(255,190,0,0.12)]">
         <h3 class="text-2xl font-semibold mb-6">RF & Wireless Systems</h3>
 
 <div class="space-y-5">
@@ -680,7 +696,7 @@ Global Touring, Concerts & Live Events
 </div>        </div>
       </div>
 </div>
-     <div class="card luxury-hover reveal p-8 min-h-[360px] transition-all duration-700 hover:-translate-y-2 hover:border-amber-400/40 hover:shadow-[0_0_70px_rgba(255,190,0,0.12)]">
+     <div class="card luxury-hover reveal-right p-8 min-h-[360px] transition-all duration-700 hover:-translate-y-2 hover:border-amber-400/40 hover:shadow-[0_0_70px_rgba(255,190,0,0.12)]">
         <h3 class="text-2xl font-semibold mb-6">Networking & DSP Platforms</h3>
 
         <div class="space-y-5">
@@ -1595,7 +1611,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
   reveals.forEach(el => revealObserver.observe(el));
-
+document.querySelectorAll('.reveal-left, .reveal-right').forEach(el => {
+observer.observe(el);
+});
   /* PARALLAX */
 
   const parallaxItems = document.querySelectorAll(".parallax");
