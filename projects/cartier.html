@@ -182,8 +182,8 @@ Role & Responsibilities
 </div>
 <div class="mt-20 pt-10 border-t border-neutral-800 flex justify-center">
 
-<a
-href="../index.html#projects-section"
+
+<a href="../index.html?section=projects-section">
 class="uppercase tracking-[0.25em] text-sm text-neutral-500 hover:text-amber-400 transition duration-300"
 >
 ← Return to Profile
@@ -197,6 +197,30 @@ class="uppercase tracking-[0.25em] text-sm text-neutral-500 hover:text-amber-400
 const lightbox = GLightbox({
     touchNavigation: true,
     loop: true
+});
+</script>
+    <script>
+window.addEventListener("load", () => {
+
+    const params = new URLSearchParams(window.location.search);
+    const section = params.get("section");
+
+    if(section){
+
+        setTimeout(() => {
+
+            const el = document.getElementById(section);
+
+            if(el){
+                el.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+            }
+
+        }, 400);
+    }
+
 });
 </script>
 </body>
