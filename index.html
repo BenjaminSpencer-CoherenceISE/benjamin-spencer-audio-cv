@@ -1562,24 +1562,32 @@ window.scrollTo(0, parseInt(savedPosition));
 document.addEventListener("DOMContentLoaded", () => {
 
   const audioSection = document.querySelector(".audio-section");
-  const audioBg = document.querySelector(".audio-bg");
+  const audioBgs = document.querySelectorAll(".audio-bg");
 
-  if (!audioSection || !audioBg) return;
+  if (!audioSection || !audioBgs.length) return;
 
   const observer = new IntersectionObserver((entries) => {
 
     entries.forEach(entry => {
 
       if (entry.isIntersecting) {
-        audioBg.classList.add("revealed");
+
+        audioBgs.forEach(bg => {
+          bg.classList.add("revealed");
+        });
+
       } else {
-        audioBg.classList.remove("revealed");
+
+        audioBgs.forEach(bg => {
+          bg.classList.remove("revealed");
+        });
+
       }
 
     });
 
   }, {
-    threshold: 0.25
+    threshold: 0.2
   });
 
   observer.observe(audioSection);
