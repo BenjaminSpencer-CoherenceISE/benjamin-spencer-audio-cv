@@ -1597,17 +1597,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const revealObserver = new IntersectionObserver((entries) => {
 
-    entries.forEach(entry => {
+  entries.forEach(entry => {
 
-      if (entry.isIntersecting) {
-        entry.target.classList.add("active");
-      }
+    if (entry.isIntersecting) {
 
-    });
+      entry.target.classList.add("active");
 
- }, {
-    threshold: 0.05,
-    rootMargin: "0px 0px -12% 0px"
+    } else {
+
+      entry.target.classList.remove("active");
+
+    }
+
+  });
+
+}, {
+  threshold: 0.15
 });
 
   reveals.forEach(el => revealObserver.observe(el));
