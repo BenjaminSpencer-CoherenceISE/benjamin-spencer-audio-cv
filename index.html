@@ -1620,5 +1620,29 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 </script>
+  <script>
+window.addEventListener("load", () => {
+
+    const params = new URLSearchParams(window.location.search);
+    const section = params.get("section");
+
+    if(section){
+
+        setTimeout(() => {
+
+            const el = document.getElementById(section);
+
+            if(el){
+                el.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+            }
+
+        }, 400);
+    }
+
+});
+</script>
 </body>
 </html>
