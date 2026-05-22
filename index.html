@@ -65,25 +65,7 @@ will-change:transform, opacity;
 opacity:.84;
 transform:scale(1);
 }
-    .desktop-bg{
-display:block;
-}
-
-.mobile-bg{
-display:none;
-}
-
-@media (max-width: 767px){
-
-.desktop-bg{
-display:none;
-}
-
-.mobile-bg{
-display:block;
-}
-
-}
+ 
 /* Technical Platforms background */
 
 .tech-section{
@@ -887,16 +869,10 @@ VIEW PROJECT →
  <section class="audio-section relative overflow-hidden">
 <!-- Audio Background -->
 <div class="absolute inset-0 overflow-hidden">
-<!-- Desktop -->
+<!-- Desktop Only -->
 <img
   src="images/fader.jpeg"
-  class="audio-bg desktop-bg absolute inset-0 w-full h-full object-cover object-center pointer-events-none"
-  alt=""
->
-  <!-- Mobile -->
-<img
-  src="images/fader-mobile.jpeg"
-  class="audio-bg mobile-bg absolute inset-0 w-full h-full object-cover scale-[0.85] object-center pointer-events-none"
+  class="audio-bg hidden md:block absolute inset-0 w-full h-full object-cover object-center pointer-events-none"
   alt=""
 >
 <div class="absolute inset-0 bg-black/45"></div>
