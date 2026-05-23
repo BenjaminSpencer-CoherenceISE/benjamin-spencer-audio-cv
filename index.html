@@ -222,7 +222,17 @@ html {
 }
 
 /* FILM GRAIN */
-
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.025;
+  mix-blend-mode: soft-light;
+  background-image:
+    url("https://grainy-gradients.vercel.app/noise.svg");
+}
 
 
 /* AUDIO SECTION ATMOSPHERE */
@@ -847,7 +857,7 @@ VIEW PROJECT →
 </section>
 
   <!-- LIVE SOUND EXPERIENCE -->
-<section class="audio-section relative overflow-hidden bg-[#050505]">
+<section class="audio-section relative overflow-hidden bg-[#0a0a0a]">
 <!-- Audio Background -->
 <div class="absolute inset-0 overflow-hidden">
 <!-- Desktop Only -->
