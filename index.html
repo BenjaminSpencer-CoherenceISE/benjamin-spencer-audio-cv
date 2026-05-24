@@ -1626,7 +1626,7 @@ parallaxItems.forEach(el => {
 const speed = el.dataset.speed || 0.15;
 
 el.style.transform =
-`translateY(${scrollY * speed}px)`;
+`translate3d(0, ${scrollY * speed}px, 0)`;
 
 });
 
