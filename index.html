@@ -1616,25 +1616,30 @@ document.querySelectorAll('.reveal-left, .reveal-right').forEach(el => {
 
   const parallaxItems = document.querySelectorAll(".parallax");
 const drifting = document.querySelectorAll(".heading-drift");
-  window.addEventListener("scroll", () => {
+const parallaxItems = document.querySelectorAll(".parallax");
+const drifting = document.querySelectorAll(".heading-drift");
 
-    const scrollY = window.scrollY;
+window.addEventListener("scroll", () => {
 
-    parallaxItems.forEach(el => {
+const scrollY = window.scrollY;
 
-      const speed = el.dataset.speed || 0.15;
+parallaxItems.forEach(el => {
 
-      el.style.transform =
-        `translateY(${scrollY * speed}px)`;
+const speed = el.dataset.speed || 0.15;
+
+el.style.transform =
+`translateY(${scrollY * speed}px)`;
+
+});
+
 drifting.forEach(el => {
 
 const speed = 0.015;
 
 el.style.transform =
 `translateY(${scrollY * speed}px)`;
-    });
 
-  });
+});
 
 });
 
