@@ -1615,7 +1615,7 @@ document.querySelectorAll('.reveal-left, .reveal-right').forEach(el => {
   /* PARALLAX */
 
   const parallaxItems = document.querySelectorAll(".parallax");
-
+const drifting = document.querySelectorAll(".heading-drift");
   window.addEventListener("scroll", () => {
 
     const scrollY = window.scrollY;
@@ -1626,7 +1626,12 @@ document.querySelectorAll('.reveal-left, .reveal-right').forEach(el => {
 
       el.style.transform =
         `translateY(${scrollY * speed}px)`;
+drifting.forEach(el => {
 
+const speed = 0.015;
+
+el.style.transform =
+`translateY(${scrollY * speed}px)`;
     });
 
   });
@@ -1657,22 +1662,7 @@ window.addEventListener("load", () => {
     }
 
 });
-    const drifting = document.querySelectorAll(".heading-drift");
-
-window.addEventListener("scroll", () => {
-
-const scrollY = window.scrollY;
-
-drifting.forEach(el => {
-
-const speed = 0.015;
-
-el.style.transform =
-`translateY(${scrollY * speed}px)`;
-
-});
-
-});
+   
 </script>
 </body>
 </html>
