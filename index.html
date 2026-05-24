@@ -179,6 +179,10 @@ html {
   transition: transform 0.15s linear;
   will-change: transform;
 }
+  .heading-drift{
+transition:transform 0.2s linear;
+will-change:transform;
+}
 
 /* PREMIUM HOVER */
 
@@ -421,7 +425,7 @@ data-speed="0.08"
         Professional Experience
       </p>
 
-     <h2 class="reveal-text text-4xl font-bold tracking-tight">
+     <h2 class="reveal-text heading-drift text-4xl font-bold tracking-tight">
         Career Timeline
       </h2>
     </div>
@@ -1651,6 +1655,22 @@ window.addEventListener("load", () => {
 
         }, 400);
     }
+
+});
+    const drifting = document.querySelectorAll(".heading-drift");
+
+window.addEventListener("scroll", () => {
+
+const scrollY = window.scrollY;
+
+drifting.forEach(el => {
+
+const speed = 0.015;
+
+el.style.transform =
+`translateY(${scrollY * speed}px)`;
+
+});
 
 });
 </script>
