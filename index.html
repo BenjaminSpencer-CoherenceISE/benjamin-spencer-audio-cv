@@ -161,12 +161,15 @@ html {
 
 .reveal-text {
   opacity: 0;
+  transform: translateY(20px);
   transition:
-    opacity 1.1s var(--cinematic-ease);
+    opacity 1.1s var(--cinematic-ease),
+    transform 1.1s var(--cinematic-ease);
 }
 
 .reveal-text.active {
   opacity: 1;
+  transform: translateY(0);
 }
 
 /* IMAGE PARALLAX */
